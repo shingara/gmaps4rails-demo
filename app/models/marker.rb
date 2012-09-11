@@ -7,4 +7,8 @@ class Marker
 
   attr_accessor :location
 
+    def gmaps4rails_infowindow
+      'foo'
+    end
+
 end

@@ -1,2 +1,17 @@
-<h1>See some marker on your map</h1>
-<%= gmaps4rails(markers) %>
+<h1>See some marker on your map by default</h1>
+<div class="google_map"></div>
+<%= gmaps("markers" => {"data" => markers},
+          'last_map' => false,
+          "map_options" =>  {
+            "center_on_user" => true,
+            "detect_location" => true,
+            "provider" => "google", :id => 'google_map'}) %>
+
+<h1>See on OpenLayer</h1>
+<div class="openlayer_map"></div>
+
+<%= gmaps("markers" => {"data" => markers},
+          "map_options" =>  {
+  "center_on_user" => true,
+  "detect_location" => true,
+  "provider" => "openlayers", :id => 'openlayer_map'}) %>
